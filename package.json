@@ -12,6 +12,7 @@
     "git-init": "git init && git add . && git commit -m \"🎉 Challenge accepted!\"",
     "db-migrate": "knex migrate:latest --knexfile ./src/db/config.ts",
     "db-seed": "knex seed:run --knexfile ./src/db/config.ts",
+    "db-create-migration": "knex migrate:make --knexfile ./src/db/config.ts",
     "lint": "prettier --write src",
     "start": "ts-node-dev --respawn --transpile-only src/index.ts"
   },

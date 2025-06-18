@@ -13,13 +13,14 @@ export const typeDefs = gql`
   }
 
   type Query {
-    authors: [Author!]!
+    getAuthors: [Author!]!
   }
 `;
 
 export const resolvers = {
   Query: {
-    authors: (parent, args, context: Context) => {
+    
+    getAuthors: (parent, args, context: Context) => {
       // 🐞 Bug fix needed!
       // We're not returning what's in DB 😱
       return [];
