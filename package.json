@@ -10,9 +10,11 @@
   "scripts": {
     "once": "npm run git-init && npm install && npm run db-migrate && npm run db-seed",
     "git-init": "git init && git add . && git commit -m \"🎉 Challenge accepted!\"",
-    "db-migrate": "knex migrate:latest --knexfile ./src/db/config.ts",
-    "db-seed": "knex seed:run --knexfile ./src/db/config.ts",
-    "db-create-migration": "knex migrate:make --knexfile ./src/db/config.ts",
+    "db-create-migration": "knex migrate:make -x ts --knexfile ./knexfile.js",
+    "db-migrate": "knex migrate:latest --knexfile ./knexfile.js",
+    "db-undo-migration": "knex migrate:rollback --knexfile ./knexfile.js",
+    "db-create-seed": "knex seed:make -x ts --knexfile ./knexfile.js",
+    "db-seed": "knex seed:run --knexfile ./knexfile.js",
     "lint": "prettier --write src",
     "start": "ts-node-dev --respawn --transpile-only src/index.ts"
   },
