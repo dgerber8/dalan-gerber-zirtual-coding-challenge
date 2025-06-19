@@ -8,25 +8,31 @@ import { startStandaloneServer } from "@apollo/server/standalone";
 /**
  * Our GraphQL API definitions and resolvers
  */
-import { typeDefs, resolvers } from "./api";
+import { typeDefs } from "./schema";
+import Query from "./resolvers/Query";
+import Author from "./resolvers/Author";
 
 import { Context } from "./types";
 
 /**
  * Initialize database
  */
-import "./db";
+import db from "./db";
 
 async function startApolloServer() {
   const server = new ApolloServer<Context>({
     typeDefs,
-    resolvers,
+    resolvers: {
+      Query: Query,
+      //Author: Author,
+    },
   });
 
   const { url } = await startStandaloneServer(server, {
     context: async ({ req }) => {
       return {
         userAgent: req.headers["user-agent"],
+        db,
       };
     },
   });
