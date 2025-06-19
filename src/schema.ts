@@ -5,6 +5,7 @@ export const typeDefs = gql`
     id: ID!
     givenName: String!
     familyName: String!
+    displayName: String!
   }
 
   type Query {

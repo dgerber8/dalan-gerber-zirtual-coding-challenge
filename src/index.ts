@@ -24,7 +24,7 @@ async function startApolloServer() {
     typeDefs,
     resolvers: {
       Query: Query,
-      //Author: Author,
+      Author: Author,
     },
   });
 
