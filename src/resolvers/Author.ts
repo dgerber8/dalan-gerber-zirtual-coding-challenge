@@ -22,4 +22,4 @@ const Author = {
   }
 }
 
-export {Author as default}
+export { Author as default }

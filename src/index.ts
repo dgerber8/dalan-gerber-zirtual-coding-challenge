@@ -11,6 +11,7 @@ import { startStandaloneServer } from "@apollo/server/standalone";
 import { typeDefs } from "./schema";
 import Query from "./resolvers/Query";
 import Author from "./resolvers/Author";
+import Mutation from "./resolvers/Mutation";
 
 import { Context } from "./types";
 
@@ -25,6 +26,7 @@ async function startApolloServer() {
     resolvers: {
       Query: Query,
       Author: Author,
+      Mutation: Mutation,
     },
   });
 

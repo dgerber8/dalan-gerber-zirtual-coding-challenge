@@ -15,4 +15,24 @@ export const typeDefs = gql`
     getAuthors: [Author!]!
     getAuthorById(id: ID!): Author
   }
+
+  type Mutation {
+    createAuthor(input: CreateAuthorInput!): Author!
+    updateAuthor(id: ID!, input: UpdateAuthorInput!): Author!
+  }
+
+  input CreateAuthorInput {
+    givenName: String!
+    familyName: String!
+    countryCode: String
+    pronouns: String
+  }
+
+  input UpdateAuthorInput {
+    givenName: String
+    familyName: String
+    countryCode: String
+    pronouns: String
+  }
+
 `;

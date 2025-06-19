@@ -18,11 +18,21 @@ export class Db {
   }
 
   public listAuthors() {
-    return this.knex.table<Author>("authors").select("*").limit(10);
+    return this.knex.table<Author>("authors").select("*").limit(50);
   }
 
   public getAuthorById(id: number) {
     return this.knex.table<Author>("authors").where("id", id).first();
+  }
+  
+  public async createAuthor(author: Omit<Author, "id">) {
+    const [id] = await this.knex.table<Author>("authors").insert(author);
+    return this.getAuthorById(id);
+  }
+
+  public async updateAuthor(id: number, author: Omit<Author, "id">) {
+    await this.knex.table<Author>("authors").where({ id }).update(author);
+    return this.getAuthorById(id);
   }
 }
 
