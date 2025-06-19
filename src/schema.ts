@@ -12,5 +12,6 @@ export const typeDefs = gql`
 
   type Query {
     getAuthors: [Author!]!
+    getAuthorById(id: ID!): Author
   }
 `;
