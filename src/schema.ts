@@ -8,6 +8,7 @@ export const typeDefs = gql`
     displayName: String!
     countryCode: String
     country: String
+    pronouns: String!
   }
 
   type Query {

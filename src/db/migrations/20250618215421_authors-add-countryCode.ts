@@ -1,5 +1,5 @@
 /**
- * Migration file to add a column to the `authors` table
+ * Migration file to add a countryCode column to the `authors` table
  */
 
 import type { Knex } from "knex";
