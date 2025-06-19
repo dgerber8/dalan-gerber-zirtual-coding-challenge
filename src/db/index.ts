@@ -17,8 +17,14 @@ export class Db {
     this.knex = initKnex(config.development);
   }
 
-  public listAuthors() {
-    return this.knex.table<Author>("authors").select("*").limit(50);
+  public listAuthors(limit = 50, offset = 0) {
+    return this.knex.table<Author>("authors").select("*").limit(limit).offset(offset);
+  }
+
+  public async countAuthors() {
+    const result = await this.knex("authors").count("id as count");
+    const count = (result[0] as { count: string | number }).count;
+    return Number(count);
   }
 
   public getAuthorById(id: number) {

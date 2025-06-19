@@ -12,8 +12,15 @@ export const typeDefs = gql`
   }
 
   type Query {
-    getAuthors: [Author!]!
+    getAuthors(limit: Int = 50, offset: Int = 0): AuthorsPage!
     getAuthorById(id: ID!): Author
+  }
+  
+  type AuthorsPage {
+    items: [Author!]!
+    limit: Int!
+    offset: Int!
+    totalCount: Int!
   }
 
   type Mutation {
