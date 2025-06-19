@@ -1,5 +1,5 @@
-import { Context } from "../types";
-import Countries from "../lib/Countries"
+import { Context } from "../../types";
+import Countries from "../../lib/Countries"
 
 const FAMILY_FIRST_COUNTRIES = ["JP"]
 

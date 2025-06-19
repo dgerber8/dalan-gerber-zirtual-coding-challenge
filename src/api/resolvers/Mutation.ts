@@ -1,4 +1,4 @@
-import { Context } from "../types";
+import { Context } from "../../types";
 
 const Mutation = {
   createAuthor: async (parent, args, context: Context) => {

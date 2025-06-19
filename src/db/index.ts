@@ -16,7 +16,7 @@ export class Db {
   constructor() {
     this.knex = initKnex(config.development);
   }
-
+  
   public listAuthors(limit = 50, offset = 0) {
     return this.knex.table<Author>("authors").select("*").limit(limit).offset(offset);
   }

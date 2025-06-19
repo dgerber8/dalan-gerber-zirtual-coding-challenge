@@ -8,10 +8,10 @@ import { startStandaloneServer } from "@apollo/server/standalone";
 /**
  * Our GraphQL API definitions and resolvers
  */
-import { typeDefs } from "./schema";
-import Query from "./resolvers/Query";
-import Author from "./resolvers/Author";
-import Mutation from "./resolvers/Mutation";
+import { typeDefs } from "./api/schema";
+import Query from "./api/resolvers/Query";
+import Author from "./api/resolvers/Author";
+import Mutation from "./api/resolvers/Mutation";
 
 import { Context } from "./types";
 
