@@ -6,6 +6,7 @@ export const typeDefs = gql`
     givenName: String!
     familyName: String!
     displayName: String!
+    country: String
   }
 
   type Query {
